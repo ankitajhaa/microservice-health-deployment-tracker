@@ -16,8 +16,12 @@ ARG DEV=false
 RUN python -m venv /py && \
     /py/bin/python -m ensurepip && \
     /py/bin/pip install --upgrade pip && \
-    apk add --update --no-cache --virtual .tmp-build-deps \
-        build-base mysql-client mariadb-connector-c-dev && \
+    \
+    apk add --no-cache mariadb-connector-c && \
+    \
+    apk add --no-cache --virtual .tmp-build-deps \
+        build-base mariadb-dev gcc musl-dev && \
+    \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [ $DEV = "true" ]; then \
         /py/bin/pip install -r /tmp/requirements.dev.txt ; \
@@ -25,6 +29,7 @@ RUN python -m venv /py && \
     rm -rf /tmp && \
     apk del .tmp-build-deps && \
     addgroup -S django && adduser -S django-user -G django
+
 
 COPY . /app
 
