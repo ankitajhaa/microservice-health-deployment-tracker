@@ -1,5 +1,5 @@
 from django.db import models
-from django.db import models
+from django.conf import settings
 # Create your models here.
 
 class Incident(models.Model):
@@ -28,3 +28,22 @@ class Incident(models.Model):
     status = models.CharField(max_length=10, choices=Status.choices)
     created_at = models.DateTimeField(auto_now_add=True)
     resolved_at = models.DateTimeField(null=True, blank=True)
+
+class StatusHistory(models.Model):
+    
+    incident = models.ForeignKey(
+        Incident,
+        on_delete=models.CASCADE,
+        related_name="history"
+    )
+
+    old_status = models.CharField(max_length=20)
+    new_status = models.CharField(max_length=20)
+
+    changed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
+
+    changed_at = models.DateTimeField(auto_now_add=True)
