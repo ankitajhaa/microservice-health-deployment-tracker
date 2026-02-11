@@ -13,9 +13,6 @@ class Service(models.Model):
         return self.name
 
 class Environment(models.Model):
-    DEV = "DEV"
-    STAGING = "STAGING"
-    PROD = "PROD"
 
     class environ_name(models.TextChoices):
         DEV = "DEV"
