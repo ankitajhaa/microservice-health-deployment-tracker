@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/token/', obtain_auth_token),
     path('api/', include("services.urls")),
     path('api/', include("deployments.urls")),
+    path('api/', include("incidents.urls")),
 ]
