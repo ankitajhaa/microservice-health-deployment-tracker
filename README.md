@@ -1,12 +1,10 @@
 # Microservice Health and Deployment Tracker
 
-A production-style backend platform to track internal microservices, deployments, environments, incidents, and reliability metrics.  
-
-This project mirrors real engineering tools used in DevOps and Site Reliability Engineering (SRE) teams.
+A production-style backend platform to track internal microservices, deployments, environments, incidents, and reliability metrics. This project mirrors real engineering tools used in DevOps and Site Reliability Engineering (SRE) teams.
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - Django  
 - Django REST Framework  
@@ -17,7 +15,7 @@ This project mirrors real engineering tools used in DevOps and Site Reliability 
 
 ---
 
-## ✨ Features
+## Features
 
 - Service registry  
 - Environment tracking (DEV / STAGING / PROD)  
@@ -30,14 +28,14 @@ This project mirrors real engineering tools used in DevOps and Site Reliability 
 
 ---
 
-## ⚙️ Setup & Run Instructions
+## Setup & Run Instructions
 
 ### 1. Clone repository
 ```bash
-git clone <https://github.com/ankitajhaa/microservice-health-deployment-tracker>
-cd <microservice-health-deployment-tracker>
+git clone https://github.com/ankitajhaa/microservice-health-deployment-tracker
+cd microservice-health-deployment-tracker
 
-### 2. Build containers
+2. Build containers
 docker compose build
 
 ### 3. Start the application
