@@ -59,19 +59,24 @@ docker compose run --rm app python manage.py createsuperuser
 All APIs require authentication.
 
 ### 1. Obtain token
+```bash
 POST /api/token/
+```
 
 ### 2. Use token in header
+```bash
 Authorization: Token <your_token>
+```
 
 ## Main API Endpoints
-
+```bash
 /api/services/
 /api/environments/
 /api/deployments/
 /api/incidents/
 /api/incidents/{id}/resolve/
 /api/metrics/
+```
 
 ## Reliability Metrics
 
@@ -84,11 +89,17 @@ Authorization: Token <your_token>
 ## API Documentation
 
 ### OpenAPI schema
+```bash
 /api/schema/
+```
 
 ### Swagger UI
+```bash
 /api/docs/
+```
 
 ## Run Tests
+```bash
 docker compose run --rm app python manage.py test
+```
 
