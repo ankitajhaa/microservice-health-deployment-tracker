@@ -34,18 +34,26 @@ A production-style backend platform to track internal microservices, deployments
 ```bash
 git clone https://github.com/ankitajhaa/microservice-health-deployment-tracker
 cd microservice-health-deployment-tracker
-
-2. Build containers
+```
+### 2. Build containers
+```bash
 docker compose build
+```
 
 ### 3. Start the application
+```bash
 docker compose up
+```
 
 ### 4. Run database migrations
+```bash
 docker compose run --rm app python manage.py migrate
+```
 
 ### 5. Create a superuser
+```bash
 docker compose run --rm app python manage.py createsuperuser
+```
 
 ## Authentication
 All APIs require authentication.
